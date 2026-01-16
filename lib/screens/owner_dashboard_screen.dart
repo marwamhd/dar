@@ -1,4 +1,6 @@
+import 'package:dar/screens/maintenance_screen.dart';
 import 'package:dar/screens/owner_booking_requests_screen.dart';
+import 'package:dar/screens/payments_screen.dart';
 import 'package:dar/screens/units_screen.dart';
 import 'package:flutter/material.dart';
 import '../constants/colors.dart';
@@ -111,13 +113,23 @@ class OwnerDashboardScreen extends StatelessWidget {
                         ),
                       );
                     }),
-                    _buildDrawerItem(Icons.attach_money, 'المدفوعات', false, () {
+                    _buildDrawerItem(Icons.pending_actions, 'المدفوعات', false, () {
                       Navigator.pop(context);
-                      print('Navigate to Payments');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const PaymentsScreen(),
+                        ),
+                      );
                     }),
                     _buildDrawerItem(Icons.build, 'الصيانة', false, () {
                       Navigator.pop(context);
-                      print('Navigate to Maintenance');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const MaintenanceScreen(),
+                        ),
+                      );
                     }),
                     const Divider(color: AppColors.border),
                     _buildDrawerItem(Icons.person, 'الملف الشخصي', false, () {
