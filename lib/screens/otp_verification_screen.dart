@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../constants/colors.dart';
 import '../widgets/custom_button.dart';
 import 'main_screen.dart';
+import 'owner_dashboard_screen.dart';
 
 class OtpVerificationScreen extends StatefulWidget {
   final String phoneNumber;
@@ -190,7 +191,9 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                           Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const MainScreen(),
+                              builder: (context) => widget.userRole == 'owner'
+                                  ? const OwnerDashboardScreen()
+                                  : const MainScreen(),
                             ),
                             (route) => false, // يحذف كل الشاشات السابقة
                           );
