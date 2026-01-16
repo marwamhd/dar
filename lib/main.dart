@@ -24,9 +24,10 @@ class DarApp extends StatelessWidget {
           primary: AppColors.secondary,
         ),
       ),
-      // home: const SplashScreen(),
+      home: const SplashScreen(),
       // home: const RoleSelectionScreen(),
-      home: const MainScreen(),
+      // home: const MainScreen(),
+
     );
   }
 }

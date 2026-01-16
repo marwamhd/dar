@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../constants/colors.dart';
 import '../widgets/custom_button.dart';
+import 'login_screen.dart';
 
 class RoleSelectionScreen extends StatelessWidget {
   const RoleSelectionScreen({super.key});
@@ -38,8 +39,12 @@ class RoleSelectionScreen extends StatelessWidget {
               CustomButton(
                 text: 'عميل (أبحث عن شقة)',
                 onPressed: () {
-                  // سننتقل للتسجيل لاحقاً
-                  print('Customer selected');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginScreen(userRole: 'customer'),
+                    ),
+                  );
                 },
                 isPrimary: true,
               ),
@@ -50,8 +55,12 @@ class RoleSelectionScreen extends StatelessWidget {
               CustomButton(
                 text: 'مالك (أملك عقارات)',
                 onPressed: () {
-                  // سننتقل للتسجيل لاحقاً
-                  print('Owner selected');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginScreen(userRole: 'owner'),
+                    ),
+                  );
                 },
                 isPrimary: false,
               ),
